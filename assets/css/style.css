@@ -1,3 +1,8 @@
+    #yolo {
+        left: 0px !important;
+        top: 45px;
+    }
+
     /* GLOBAL STYLES
     -------------------------------------------------- */
     /* Padding below the footer and lighter body text */
@@ -109,7 +114,7 @@
     .carousel-caption {
       background-color: transparent;
       position: absolute;
-      right: 0;
+      left: 0;
       bottom: auto !important;
       left: auto !important;
       max-width: 550px;
