@@ -129,6 +129,9 @@
       background-image: none;
       background-color: #e32528;
     }
+    .btn:hover {
+      background-color: #e54d4f;
+    }
 
 
 
