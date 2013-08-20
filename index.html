@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>hackNY | Masters</title>
+    <title>hackNY Masters</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,12 +18,6 @@
       <script src="assets/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
   </head>
 
   <body>
@@ -57,11 +51,6 @@
       <div class="carousel-inner">
         <div class="item active">
           <img src="assets/img/h_bg.jpg" alt="">
-<!-- 
-            <div class="carousel-caption">
-              <h1>What's on your mind?</h1>
-              <p class="lead">We are seeking professional developers from the NYC community to give short talks from Hadoop workflows to Redis tuning to multi-armed bandit testing.</p> -->
-
             <div class="carousel-caption" id="yolo">
               <h1>A mini-conference at the 2013 hackNY Fall Hackathon</h1>
             </div>
@@ -95,20 +84,23 @@
           <p>Each talk will be short: only twenty five minutes long.<p>
             
           <h3>What kind of talks are we looking for?</h3>
-          <p>We're looking to expose the students to a higher level of technology than API 101. We're looking for in-depth talks that you might give at a full conference - things like optimizing Hadoop workflows, or Redis performance tuning, or proper Python concurrency patterns. Anything goes, really - as long as it's geared towards hackers above the intermediate level.<p>
+          <p>We're looking to expose the students to a higher level of technology than API 101. We're looking for in-depth talks that you might give at a full conference - things like Backbone architecture models, Redis performance tuning, proper Python concurrency patterns, or machine learning techniques. Anything goes, really - as long as it's geared towards hackers at the intermediate level and above.<p>
 
           <h3>Why are we doing this?</h3>
           <p>One goal of the hackNY hackathon is for everyone to learn something. We have historically focused on teaching beginners the ropes, and while we will still be focusing on teaching beginners during this hackathon, we also want our more advanced students to walk away having learned something new about the programming world that they will soon graduate into.<p>
 
           <h3>Who are we looking for?</h3>
-          <p>If you're currently a professional programmer of any stripe in NYC and you aren't afraid of smart students asking tough questions, you should submit an abstract.<p>
+          <p>If you're currently a professional programmer of any stripe in NYC and you aren't afraid of smart students asking tough questions, you should submit an abstract. If you're currently a student...why not?! Apply to speak anyway!<p>
 
+          <h3>What's the hackNY Hackathon?</h3>
+          <p>The <a href="http://hackny.org/a/2013/07/announcing-hacknys-fall-2013-hackathon-on-sept-28th-29th/">hackNY Hackathon</a> is the premier student hackathon in the nation, thrown bi-annually in New York City since 2010. It is organized by <a href="http://hackny.org">hackNY</a>, a nonprofit for students that aims to federate the next generation of NYC hackers.
         </div>
 
         <div class="span6">
 
           <h3>Call for proposals:</h3>
-          <form class="form-horizontal">
+          <h4>(deadline: September 20)</h4>
+          <form class="form-horizontal" action="submit.php" method="post">
           <fieldset>
 
           <!-- Form Name -->
@@ -134,21 +126,21 @@
           <div class="control-group">
             <label class="control-label" for="abstract">Abstract</label>
             <div class="controls">                     
-              <textarea id="abstract" name="abstract"></textarea>
+              <textarea id="abstract" name="abstract" placeholder="2-3 sentences will do"></textarea>
             </div>
           </div>
           
           <div class="control-group">
             <label class="control-label" for="submit"></label>
             <div class="controls">                     
-                <a class="btn btn-large btn-primary" href="#">Submit</a>
+                <input class="btn btn-large btn-primary" type="submit"></input>
             </div>
           </div>
 
           </fieldset>
           </form>
 
-
+        <div id="callback"></div>
         </div>
       </div><!-- /.row -->
 
@@ -187,8 +179,21 @@
     <script>
       !function ($) {
         $(function(){
-          // carousel demo
-          $('#myCarousel').carousel()
+            $('.form-horizontal').on('submit', function(event) {
+                var $form = $(this);
+        
+                $.ajax({
+                    type: $form.attr('method'),
+                    url: $form.attr('action'),
+                    data: $form.serialize(),
+        
+                    success: function(data, status) {
+                        $("#callback").html('Thanks for your submission! We\'ll be in touch!');
+                    }
+                });
+        
+                event.preventDefault();
+            });
         })
       }(window.jQuery)
     </script>

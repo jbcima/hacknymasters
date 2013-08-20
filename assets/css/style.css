@@ -1,8 +1,13 @@
-    #yolo {
-        right: 20px !important;
-        top: 45px;
+    #callback {
+        right: -142px;
+        position: relative;
+        top: -48px;
     }
 
+    #yolo {
+        left: 0px !important;
+        top: 45px;
+    }
     /* GLOBAL STYLES
     -------------------------------------------------- */
     /* Padding below the footer and lighter body text */
@@ -72,16 +77,14 @@
       margin-top: 10px;
     }
 
-    .row {
-      margin-top: 20px;
-    }
+
 
     /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
 
     /* Carousel base class */
     .carousel {
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
 
     .carousel .container {
@@ -116,7 +119,7 @@
     .carousel-caption {
       background-color: transparent;
       position: absolute;
-      left: 0;
+      right: 0;
       bottom: auto !important;
       left: auto !important;
       max-width: 550px;
