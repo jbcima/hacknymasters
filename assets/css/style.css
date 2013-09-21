@@ -1,3 +1,72 @@
+
+.schedule table {
+  margin: auto;
+}
+
+.schedule th {
+  padding: 40px 14px 14px 14px;
+}
+
+.schedule tr.tall {
+  height: 6em;
+}
+
+.schedule .short td {
+  padding: 0;
+}
+
+.schedule td {
+  padding: 12px 40px;
+  border: 0px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+.schedule td.break {
+  background-color: rgb(213, 213, 213);
+}
+
+.schedule td.sponsor-talk, .schedule td.special {
+  background-color: rgb(236, 236, 236);
+}
+
+.schedule td.session hr, .schedule td.break hr, .schedule td.workshop hr {
+  border: 0;
+  height: 0;
+  margin: 4px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.schedule td.session span.abstract hr {
+  margin: -10px 0 20px;
+}
+
+.schedule .session span.abstract {
+  position: absolute;
+  background-color: rgba(246, 255, 179, 0.92);
+  font-size: 0.9em;
+  width: 30%;
+  margin-left: -300px;
+  padding: 30px 30px 30px 40px;
+  border: 1px solid rgb(160, 167, 115);
+}
+
+.schedule .session span.abstract ul li {
+  margin-left: 15px;
+}
+
+.schedule .session span.abstract.hidden {
+  display: none;
+}
+
+.schedule .session .abstract span.name {
+  text-align: center;
+  display: block;
+}
+
+
+
     #callback {
         right: -142px;
         position: relative;

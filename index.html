@@ -73,8 +73,8 @@
           <h2><i class="icon-calendar icon-large"></i> &nbsp; September 28th, between 5-9pm</h2>
         </div>
       </div><!-- /.row -->
-
-
+      
+    
       <div class="row">
         <div class="span6">
           <h3>What's the hackNY Masters?</h3>
@@ -96,54 +96,72 @@
           <p>The <a href="http://hackny.org/a/2013/07/announcing-hacknys-fall-2013-hackathon-on-sept-28th-29th/">hackNY Hackathon</a> is the premier student hackathon in the nation, thrown bi-annually in New York City since 2010. It is organized by <a href="http://hackny.org">hackNY</a>, a nonprofit for students that aims to federate the next generation of NYC hackers.
         </div>
 
+
         <div class="span6">
+        <section class="schedule">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="3">Track 1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5pm - 5:30pm</td>
+                <td class="session">Ian Jennings - Mote.IO<span class="abstract hidden">
+                  <h5>"Standing on the shoulders of giants: Building Mote.IO"</h5>Mote.io is the combined product of a phonegap app, chrome extension, plugin, server, and boostrap website. I'll discuss how all these parts work together to form a single product, and the architecture that powers it. Subjects include websockets, scaling, NodeJS, phonegap, chrome extensions, font end plugins, security, reverse proxies, redis, and MVP.
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td>5:30pm - 6pm</td>
+                <td class="session">Randall Hunt - MongoDB</td>
+              </tr>
+              <tr>
+                <td>6:00pm - 6:30pm</td>
+                <td class="session">Mike Swift - Epic Muskrat, Inc.</td>
+              </tr>
+              <tr>
+                <td>6:30pm - 7pm</td>
+                <td class="session">Edison Wang - Vine/Twitter</td>
+              </tr>
+              <tr>
+                <td>7:00pm - 7:30pm</td>
+                <td class="session">Kevin - Fog Creek Software</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th colspan="3">Track 2</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5-5:30pm</td>
+                <td class="session">Ryan Lane - Wikimedia</td>
+              </tr>
+              <tr>
+                <td>5:30-6pm</td>
+                <td class="session">Kui Tang</td>
+              </tr>
+              <tr>
+                <td>6pm-6:30pm</td>
+                <td class="session">Aditya Mukherjee - Cornell University</td>
+              </tr>
+              <tr>
+                <td>6:30-7:00pm</td>
+                <td class="session">Seth Thompson and Geoffrey Lit - Yale</td>
+              </tr>
+              <tr>
+                <td>7pm-7:30pm</td>
+                <td class="session">David Yeu - GroupMe</td>
+              </tr>
+            </tbody>
+          </table>
 
-          <h3>Call for proposals:</h3>
-          <h4>(deadline: September 20)</h4>
-          <form class="form-horizontal" action="submit.php" method="post">
-          <fieldset>
-
-          <!-- Form Name -->
-          <!-- <legend>Form Name</legend> -->
-
-          <!-- Text input-->
-          <div class="control-group">
-            <label class="control-label" for="email">Email</label>
-            <div class="controls">
-              <input id="email" name="email" type="text" placeholder="enter your email" class="input-xlarge" required="">
-            </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="control-group">
-            <label class="control-label" for="company">Company</label>
-            <div class="controls">
-              <input id="company" name="company" type="text" placeholder="where do you work?" class="input-xlarge">
-            </div>
-          </div>
-
-          <!-- Textarea -->
-          <div class="control-group">
-            <label class="control-label" for="abstract">Abstract</label>
-            <div class="controls">                     
-              <textarea id="abstract" name="abstract" placeholder="2-3 sentences will do"></textarea>
-            </div>
-          </div>
-          
-          <div class="control-group">
-            <label class="control-label" for="submit"></label>
-            <div class="controls">                     
-                <input class="btn btn-large btn-primary" type="submit"></input>
-            </div>
-          </div>
-
-          </fieldset>
-          </form>
-
-        <div id="callback"></div>
+        </section>
         </div>
       </div><!-- /.row -->
-
       </div>
   
 
@@ -164,37 +182,18 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/speakers.js"></script>
     <script>
       !function ($) {
+        
         $(function(){
-            $('.form-horizontal').on('submit', function(event) {
-                var $form = $(this);
-        
-                $.ajax({
-                    type: $form.attr('method'),
-                    url: $form.attr('action'),
-                    data: $form.serialize(),
-        
-                    success: function(data, status) {
-                        $("#callback").html('Thanks for your submission! We\'ll be in touch!');
-                    }
-                });
-        
-                event.preventDefault();
+            // display abstracts on hover
+            $('section.schedule').on('mouseenter', 'td.session', function() {
+              $(this).children('span').removeClass('hidden');
+            }).on('mouseleave', 'td.session', function() {
+              $(this).children('span').addClass('hidden');
             });
-        })
+          })
       }(window.jQuery)
     </script>
     <script src="assets/js/holder/holder.js"></script>
